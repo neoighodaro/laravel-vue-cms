@@ -1,27 +1,16 @@
-# go-pusher-chat-widget
-This is a demo of a real-time chat widget powered by Go and Pusher Channels. You can read about how it was created on [Pusher's blog.](https://blog.pusher.com/author/neo/)
+# Build a CMS from scratch with Laravel and Vue
 
-## Prerequisites
-
-* An IDE of your choice e.g. [Visual Studio Code.](https://code.visualstudio.com/)
-* [Go](https://golang.org/doc/install) installed on your computer.
-* Basic knowledge of GoLang.
-* Basic knowledge of JavaScript (ES6 syntax).
-* Basic knowledge of using a CLI tool or terminal.
-* Pusher application. Create one [here.](http://pusher.com/)
+This is an example of how to build a CMS from scratch with Laravel and Vue. You can read the article on Pusher here
 
 ## Getting Started
 
-To get started with the project, make sure you have all the prequiisites above.
-
-1. Clone the project to your machine.
-2. Update the Pusher keys in the chat.go, app.js and support.js files.
-3. Run the command: $ go get github.com/pusher/pusher-http-go
-4. Run the command: $ go run chat.go
-4. Visit http://localhost:8070 to see application in action.
+* Download or clone the project
+* Rename .env.example to .env
+* Configure the database settings in the .env file
+* Update the PUSHER_APP_* keys in the .env file
+* Change the BROADCAST_DRIVER to pusher
+* Run the command: `php artisan serve && npm run dev` to start the app
 
 ## Built With
-
-* [Go](https://golang.org/doc/install) - Modern programming language.
-* [Pusher](https://pusher.com/) - build realtime applications easily.
-* [Echo](https://echo.labstack.com/) - Go web framework.
+* Laravel framework
+* PHP

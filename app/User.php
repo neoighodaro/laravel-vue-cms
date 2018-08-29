@@ -2,8 +2,8 @@
 
 namespace App;
 
-use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Notifications\Notifiable;
 
 class User extends Authenticatable
 {
@@ -27,26 +27,38 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
-
-    public function roles() {
+    public function roles()
+    {
         return $this->belongsToMany(Role::class);
     }
 
+    public function checkRoles($roles)
+    {
 
-    public function checkRoles($roles) {
-    
-    if (is_array($roles)) {
-        return $this->hasAnyRole($roles) || abort(404);
+        if (is_array($roles)) {
+            return $this->hasAnyRole($roles) || abort(404);
+        }
+
+        return $this->hasRole($roles) || abort(404);
     }
-    
-    return $this->hasRole($roles) || abort(404);
+
+    public function hasAnyRole($roles)
+    {
+        return null !== $this->roles()->whereIn('name', $roles)->first();
     }
-    
-    public function hasAnyRole($roles) {
-    return null !== $this->roles()->whereIn('name', $roles)->first();
-    }
-    
-    public function hasRole($role) {
+
+    public function hasRole($role)
+    {
         return null !== $this->roles()->where('name', $role)->first();
+    }
+
+    public function posts()
+    {
+        return $this->hasMany(Post::class);
+    }
+
+    public function comments()
+    {
+        return $this->hasMany(Comment::class);
     }
 }
