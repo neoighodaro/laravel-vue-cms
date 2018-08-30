@@ -7,7 +7,7 @@
     <a style="color: white" href="/admin/dashboard">HOME</a>
     <hr>
     <ul>
-       <li> <router-link :to="{ name: 'create', params: { userID } }">NEW POST </router-link></li>
+       <li> <router-link :to="{ name: 'create', params: { userId } }">NEW POST </router-link></li>
     </ul>
   </section>
 </nav>
@@ -25,7 +25,7 @@
 
 <style scoped>
 @import url(https://fonts.googleapis.com/css?family=Dosis:300|Lato:300,400,600,700|Roboto+Condensed:300,700|Open+Sans+Condensed:300,600|Open+Sans:400,300,600,700|Maven+Pro:400,700);
-@import url("https://netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.css");
+@import url('https://netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.css');
 * {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
@@ -83,7 +83,7 @@ article > header {
 <script>
 export default {
   props: {
-    userID: {
+    userId: {
       type: Number,
       required: true
     },

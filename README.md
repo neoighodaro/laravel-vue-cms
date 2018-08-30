@@ -7,11 +7,12 @@ This is an example of how to build a CMS from scratch with Laravel and Vue. You 
 -   Download or clone the project.
 -   `cd` to the project directory.
 -   Rename `.env.example` to `.env`
+-   Run the command `php artisan key:generate` to generate an application key.
 -   Configure the database settings in the `.env` file.
 -   Update the `PUSHER_APP_*` keys in the `.env` file.
 -   Change the `BROADCAST_DRIVER` to `pusher`.
--   Run the command `npm install` to install the dependencies.
--   Run the command: `npm run dev` to start the app.
+-   Migrate the database by running this command: `php artisan migrate`.
+-   Run the command: `php artisan serve` to start the app.
 
 ## Built With
 
