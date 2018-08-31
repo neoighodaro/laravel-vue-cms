@@ -31,7 +31,7 @@ export default {
     this.getPost();
   },
   props: {
-    postID: {
+    postId: {
       type: Number,
       required: true
     }
@@ -48,7 +48,7 @@ export default {
       let title = this.$refs.title.value;
       let body = this.$refs.body.value;
       axios
-        .put("/api/posts/" + this.postID, { title, body })
+        .put("/api/posts/" + this.postId, { title, body })
         .then(response => {
           this.successful = true;
           this.error = false;
