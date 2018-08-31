@@ -32,7 +32,7 @@
 <script>
 export default {
   props: {
-    userID: {
+    userId: {
       type: Number,
       required: true
     }
@@ -49,7 +49,7 @@ export default {
       const formData = new FormData();
       formData.append("title", this.$refs.title.value);
       formData.append("body", this.$refs.body.value);
-      formData.append("user_id", this.userID);
+      formData.append("user_id", this.userId);
       formData.append("image", this.$refs.image.files[0]);
       axios
         .post("/api/posts", formData)
