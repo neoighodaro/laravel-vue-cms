@@ -30,7 +30,7 @@ export default {
       type: String,
       required: true
     },
-    postID: {
+    postId: {
       type: Number,
       required: true
     }
@@ -53,13 +53,13 @@ export default {
   },
   methods: {
     fetchComments() {
-      axios.get("/" + this.postID + "/comments").then(response => {
+      axios.get("/" + this.postId + "/comments").then(response => {
         this.comments = response.data;
       });
     },
     addComment() {
       let body = this.$refs.body.value;
-      axios.post("/" + this.postID + "/comments", { body }).then(response => {
+      axios.post("/" + this.postId + "/comments", { body }).then(response => {
         this.comments.push({
           user: {
             name: this.userName
