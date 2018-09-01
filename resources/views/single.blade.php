@@ -17,7 +17,10 @@
 </div>
 @auth
 <div id="app">
-<Comments :post-i-d="{{ json_encode($post->id) }}" :user-Name="{{ json_encode(Auth::user()->name) }}"></Comments>
+    <Comments 
+        :post-id='@json($post->id)' 
+        :user-name='@json(auth()->user()->name)'>
+    </Comments>
 </div>
 @endauth
 </div>
