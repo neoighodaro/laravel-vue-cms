@@ -46,7 +46,10 @@
         </div>
       </div>
     </nav>
-@yield('content')
+
+  <div id="app">
+     @yield('content')
+  </div>
 
   <footer class="py-5 bg-dark">
       <div class="container">
