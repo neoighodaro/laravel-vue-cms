@@ -16,12 +16,10 @@
     <br>
 </div>
 @auth
-<div id="app">
-    <Comments 
-        :post-id='@json($post->id)' 
-        :user-name='@json(auth()->user()->name)'>
-    </Comments>
-</div>
+<Comments 
+    :post-id='@json($post->id)' 
+    :user-name='@json(auth()->user()->name)'>
+</Comments>
 @endauth
 </div>
 </div>
