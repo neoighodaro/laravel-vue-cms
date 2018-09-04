@@ -10,8 +10,8 @@
     <span v-if="errors.title" class="label label-danger"> {{ errors.title[0] }} </span>
     <span v-if="errors.body" class="label label-danger"> {{ errors.body[0] }} </span>
 </div>
-         
-            
+
+
 <div class="form-group">
   <input type="title" ref="title" class="form-control" id="title" placeholder="Enter title" required>
 </div>
@@ -48,7 +48,7 @@ export default {
       let title = this.$refs.title.value;
       let body = this.$refs.body.value;
       axios
-        .put("/api/posts/" + this.postId, { title, body })
+        .put('/api/posts/' + this.postId, { title, body })
         .then(response => {
           this.successful = true;
           this.error = false;
@@ -65,7 +65,7 @@ export default {
         });
     },
     getPost() {
-      axios.get("/api/posts/" + this.postID).then(response => {
+      axios.get('/api/posts/' + this.postId).then(response => {
         this.$refs.title.value = response.data.data.title;
         this.$refs.body.value = response.data.data.body;
       });
