@@ -60445,7 +60445,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: {
-    userID: {
+    userId: {
       type: Number,
       required: true
     }
@@ -60465,7 +60465,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       var formData = new FormData();
       formData.append("title", this.$refs.title.value);
       formData.append("body", this.$refs.body.value);
-      formData.append("user_id", this.userID);
+      formData.append("user_id", this.userId);
       formData.append("image", this.$refs.image.files[0]);
       axios.post("/api/posts", formData).then(function (response) {
         _this.successful = true;
@@ -60667,10 +60667,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   mounted: function mounted() {
@@ -60725,11 +60721,11 @@ var render = function() {
           "p",
           { staticClass: "border p-3" },
           [
-            _vm._v(" \n        " + _vm._s(post.title) + " \n        "),
+            _vm._v("\n        " + _vm._s(post.title) + "\n        "),
             _c(
               "router-link",
               {
-                attrs: { to: { name: "update", params: { postID: post.id } } }
+                attrs: { to: { name: "update", params: { postId: post.id } } }
               },
               [
                 _c(
@@ -60895,7 +60891,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
   },
 
   props: {
-    postID: {
+    postId: {
       type: Number,
       required: true
     }
@@ -60914,7 +60910,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
       var title = this.$refs.title.value;
       var body = this.$refs.body.value;
-      axios.put("/api/posts/" + this.postID, { title: title, body: body }).then(function (response) {
+      axios.put('/api/posts/' + this.postId, { title: title, body: body }).then(function (response) {
         _this.successful = true;
         _this.error = false;
         _this.errors = [];
@@ -60931,7 +60927,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     getPost: function getPost() {
       var _this2 = this;
 
-      axios.get("/api/posts/" + this.postID).then(function (response) {
+      axios.get('/api/posts/' + this.postId).then(function (response) {
         _this2.$refs.title.value = response.data.data.title;
         _this2.$refs.body.value = response.data.data.body;
       });
@@ -61119,7 +61115,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       type: String,
       required: true
     },
-    postID: {
+    postId: {
       type: Number,
       required: true
     }
@@ -61147,7 +61143,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     fetchComments: function fetchComments() {
       var _this2 = this;
 
-      axios.get("/" + this.postID + "/comments").then(function (response) {
+      axios.get("/" + this.postId + "/comments").then(function (response) {
         _this2.comments = response.data;
       });
     },
@@ -61155,7 +61151,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       var _this3 = this;
 
       var body = this.$refs.body.value;
-      axios.post("/" + this.postID + "/comments", { body: body }).then(function (response) {
+      axios.post("/" + this.postId + "/comments", { body: body }).then(function (response) {
         _this3.comments.push({
           user: {
             name: _this3.userName
