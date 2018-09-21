@@ -1,6 +1,13 @@
 # Build a CMS from scratch with Laravel and Vue
 
-This is an example of how to build a CMS from scratch with Laravel and Vue. You can read the article on Pusher here
+This is an example of how to build a CMS from scratch with Laravel and Vue. You can read the article on Pusher here:
+
+* [Part One](https://pusher.com/tutorials/cms-laravel-vue-part-1)
+* [Part Two](https://pusher.com/tutorials/cms-laravel-vue-part-2)
+* [Part Three](https://pusher.com/tutorials/cms-laravel-vue-part-3)
+* [Part Four](https://pusher.com/tutorials/cms-laravel-vue-part-4)
+* [Part Five](https://pusher.com/tutorials/cms-laravel-vue-part-5)
+* [Part Six](https://pusher.com/tutorials/cms-laravel-vue-part-6)
 
 ## Getting Started
 
@@ -14,6 +21,7 @@ This is an example of how to build a CMS from scratch with Laravel and Vue. You 
 -   Change the `BROADCAST_DRIVER` to `pusher`.
 -   Migrate the database by running this command: `php artisan migrate --seed`.
 -   Run the command: `php artisan serve` to start the app.
+
 
 ## Built With
 
